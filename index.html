@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Jigsaw Puzzle Game</title>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdn.jsdelivr.net/npm/konva@8.3.13/konva.min.js"></script>
+    </head>
+    <body>
+        <div class="puzzle-container">
+            <h1>Jigsaw Puzzle Game</h1>
+
+            <div class="game-layout">
+                <div class="settings-panel">
+                    <h3>Settings</h3>
+                    <div class="setting-item">
+                        <label for="difficultySelect">Difficulty:</label>
+                        <select id="difficultySelect">
+                            <option value="2">Easy (2x2)</option>
+                            <option value="3" selected>Medium (3x3)</option>
+                            <option value="4">Hard (4x4)</option>
+                            <option value="5">Expert (5x5)</option>
+                        </select>
+                    </div>
+                    <div class="setting-item">
+                        <label for="snapDistance">Snap Distance:</label>
+                        <input type="range" id="snapDistance" min="5" max="30" value="20">
+                        <span id="snapValue">20px</span>
+                    </div>
+                    <div class="setting-item">
+                        <button id="newGameButton" class="button">New Game</button>
+                    </div>
+                </div>
+
+                <div class="game-area">
+                    <div class="controls">
+                        <label for="fileInput" class="custom-file-upload">
+                            📂 Upload Image
+                        </label>
+                        <input type="file" id="fileInput" accept="image/*">
+
+                        <button id="shuffleButton" class="button">
+                            🔀 Shuffle
+                        </button>
+                        <button id="solveButton" class="button">
+                            ✔ Solve
+                        </button>
+                    </div>
+
+                    <div class="progress-bar">
+                        <div class="progress-bar-fill" style="width: 0%"></div>
+                    </div>
+
+                    <div id="containerWrapper">
+                        <div id="container"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
